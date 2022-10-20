@@ -1,6 +1,3 @@
-#+title: Savegameeditor
-#+author: Brian Mettenbrink
-
 # Noita Save game editor
 ## needs to grab
 ### In game Info
