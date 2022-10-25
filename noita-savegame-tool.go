@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"github.com/rivo/tview"
 )
 
 // create a custom Noita world status struct
@@ -135,6 +136,7 @@ type noita_world struct {
 func main() {
 	//read in the xml world state file
 	var savefile string = getsavelocation()
+	var infinatespellcount string
 
 	xmlFile := readworldstate(savefile)
 	// print is sucessfull
@@ -151,7 +153,8 @@ func main() {
 
 	fmt.Println("Does player have the perk gold is forever? " + noita_world.WorldStateComponent.PerkGoldIsForever)
 	fmt.Println("How many times hase player done damage over 1mill with a single spell? " + noita_world.WorldStateComponent.PlayerDidInfiniteSpellCount)
-	noita_world.WorldStateComponent.PlayerDidInfiniteSpellCount = "88"
+	fmt.Scanln(&infinatespellcount)
+	noita_world.WorldStateComponent.PlayerDidInfiniteSpellCount = infinatespellcount
 	fmt.Println("How many times hase player done damage over 1mill with a single spell? " + noita_world.WorldStateComponent.PlayerDidInfiniteSpellCount)
 
 	// write out the world state xml file
@@ -183,6 +186,11 @@ func writeworldstate(savefile string, xmlFile *os.File, noita_world noita_world)
 	file, _ := xml.MarshalIndent(noita_world, "", "")
 	ioutil.WriteFile(savefile, file, 0644)
 	xmlFile.Close()
+}
+
+func whichThingToEdit() {
+	println("What would you like to edit?")
+	println(args ...Type)
 }
 
 func readplayerstate() {
