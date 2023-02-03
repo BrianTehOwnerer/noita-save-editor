@@ -28,7 +28,7 @@
 - secrets
   -
 - enemies killed
-  - https://noita.fandom.com/wiki/Enemies
+  - https://noita.wiki.gg/wiki/Enemies
 ## nice to have
 - import wands?
 - backup saves easily?
